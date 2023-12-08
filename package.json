@@ -1,0 +1,31 @@
+{
+  "name": "team-10-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "binlookup": "2.0.1",
+    "body-parser": "1.20.0",
+    "cors": "2.8.5",
+    "express": "4.18.1",
+    "glob": "10.3.10",
+    "mongodb": "6.2.0",
+    "mongoose": "6.5.2",
+    "node": "21.1.0",
+    "nodemon": "2.0.19",
+    "uuid": "^9.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonKramarenko/team-10-12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonKramarenko/team-10-12/issues"
+  },
+  "homepage": "https://github.com/AntonKramarenko/team-10-12#readme"
+}

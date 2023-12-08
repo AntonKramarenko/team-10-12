@@ -10,7 +10,7 @@ const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/entities', entity);
+app.use('/', entity);
 app.use('/requests', requests);
 app.use('/handbook', handbook);
 
@@ -33,8 +33,6 @@ async function runMongoDB() {
         await client.close();
     }
 }
-
-
 
 async function start() {
     try {

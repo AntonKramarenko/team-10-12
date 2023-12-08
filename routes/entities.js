@@ -3,7 +3,7 @@ const router = Router()
 const Entity = require('../models/entity')
 
 
-router.get('/entities', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const entity = await Entity.find()
         res.json(entity)
@@ -14,7 +14,7 @@ router.get('/entities', async (req, res) => {
     }
 })
 
-router.get('/entities/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const entityId = req.params.id;
     try {
         const entity = await Entity.findById(entityId)
@@ -26,7 +26,7 @@ router.get('/entities/:id', async (req, res) => {
     }
 })
 
-router.get('/entities/phone/:phoneNumber', async (req, res) => {
+router.get('/phone/:phoneNumber', async (req, res) => {
     const phoneNumber = req.params.phoneNumber;
     try {
         const entity = await Entity.findOne({ phoneNumber })
@@ -38,7 +38,7 @@ router.get('/entities/phone/:phoneNumber', async (req, res) => {
     }
 })
 
-router.post('/entities', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { username,phoneNumber, email, registrationDate, age, location, userType, familyMembers } = req.body
 
@@ -61,7 +61,7 @@ router.post('/entities', async (req, res) => {
     }
 })
 
-router.put('/entities/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const entityId = req.params.id;
         const { username,phoneNumber, email, registrationDate, age, location, userType } = req.body
@@ -85,7 +85,7 @@ router.put('/entities/:id', async (req, res) => {
     }
 });
 
-router.delete('entities/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         await Entity.findOneAndDelete({ id: req.params.id })
         const entities = await Entity.find()

@@ -1,11 +1,11 @@
 const { Router } = require('express')
 const router = Router()
-const { ukrainianRegions} = require("../constants");
+const { regions} = require("../constants");
 
 
-router.get('/handbook/regions', async (req, res) => {
+router.get('/regions', async (req, res) => {
   try {
-    res.json(ukrainianRegions)
+    res.json(regions)
   } catch (error){
     console.log('error', error);
     res.statusMessage = "GET error";

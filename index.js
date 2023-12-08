@@ -10,9 +10,9 @@ const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(entity);
-app.use(requests);
-app.use(handbook);
+app.use('/entities', entity);  // Прив'язка до /entities, а не до /
+app.use('/requests', requests);  // Прив'язка до /requests
+app.use('/handbook', handbook);  // Прив'язка до /handbook
 
 const uri = "mongodb+srv://admin:admin@cluster0.spcdnnn.mongodb.net/?retryWrites=true&w=majority";
 

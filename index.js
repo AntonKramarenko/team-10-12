@@ -10,6 +10,7 @@ const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/', entity);
 app.use('/entities', entity);
 app.use('/requests', requests);
 app.use('/handbook', handbook);

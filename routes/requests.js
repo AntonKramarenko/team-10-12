@@ -16,10 +16,10 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { userId,message, date, resolved } = req.body
+    const { userId,message, date, resolved, group, username } = req.body
 
-    const entity = new Request({ userId,message, date, resolved })
-    await entity.save()
+    const request = new Request({ userId,message, date, resolved, group, username  })
+    await request.save()
     return res.sendStatus(200)
   } catch (error){
     console.log('error', error);
@@ -27,5 +27,18 @@ router.post('/', async (req, res) => {
     res.status(400).end();
   }
 })
+router.delete('/:id', async (req, res) => {
+  try {
+    await Request.findOneAndDelete({ id: req.params.id })
+    const request = await Request.find()
+
+    res.json(request)
+  } catch (error){
+    console.log('error', error);
+    res.statusMessage = "GET error";
+    res.status(400).end();
+  }
+})
+
 
 module.exports = router

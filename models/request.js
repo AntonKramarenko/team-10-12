@@ -5,9 +5,16 @@ const Request = new Schema({
     type: String,
     required: true,
   },
+  username: {
+    type: String,
+    required: true,
+  },
   message: {
     type: String,
     required: true,
+  },
+  group: {
+    type: String,
   },
   date: {
     type: Date,

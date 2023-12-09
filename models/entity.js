@@ -5,7 +5,6 @@ const FamilySchema = require('./family')
 const Entity = new Schema({
     username: {
         type: String,
-        required: true,
     },
     phoneNumber: {
         type: String,

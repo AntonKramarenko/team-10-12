@@ -6,6 +6,18 @@ const Entity = new Schema({
     username: {
         type: String,
     },
+    telegramName: {
+        type: String,
+    },
+    userGroup: {
+        type: String,
+        default: 'Ментальне здоров’я'
+    },
+    messenger: {
+        type: String,
+        enum: ['telegram', 'viber', 'messenger'],
+        default: 'telegram'
+    },
     phoneNumber: {
         type: String,
         required: true,
@@ -18,6 +30,10 @@ const Entity = new Schema({
         type: Date,
         default: Date.now,
     },
+    birthday: {
+        type: Date,
+        default: '1994-12-08',
+    },
     age: {
         type: Number,
         default: '',
@@ -26,7 +42,7 @@ const Entity = new Schema({
         type: String,
         enum: regions,
     },
-    userType: {
+    userStatus: {
         type: String,
         enum: ['veteran', 'family_member'],
         default: 'veteran',

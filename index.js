@@ -4,6 +4,7 @@ const entity = require('./routes/entities')
 const requests = require('./routes/requests')
 const handbook = require('./routes/handbook')
 const groups = require('./routes/groups')
+const mailing = require('./routes/mailing')
 const mongoose = require('mongoose')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
+app.use('/mailing', mailing)
 app.use('/entities', entity);
 app.use('/requests', requests);
 app.use('/handbook', handbook);

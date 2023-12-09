@@ -10,7 +10,7 @@ const regions = [
   'kyiv',
   'kirovohrad',
   'luhansk',
-  'Lviv',
+  'lviv',
   'mykolaiv',
   'odessa',
   'poltava',

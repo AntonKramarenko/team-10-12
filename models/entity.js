@@ -34,10 +34,6 @@ const Entity = new Schema({
         type: Date,
         default: '1994-12-08',
     },
-    age: {
-        type: Number,
-        default: '',
-    },
     location: {
         type: String,
         enum: regions,

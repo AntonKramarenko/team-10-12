@@ -40,18 +40,7 @@ router.get('/phone/:phoneNumber', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { username,phoneNumber, email, registrationDate, age, location, userType, familyMembers } = req.body
-
-        const entity = new Entity({
-            username,
-            phoneNumber,
-            email,
-            registrationDate,
-            age,
-            location,
-            userType,
-            familyMembers
-        })
+        const entity = new Entity({...req.body})
         await entity.save()
         return res.sendStatus(200)
     } catch (error){
@@ -64,11 +53,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const entityId = req.params.id;
-        const { username,phoneNumber, email, registrationDate, age, location, userType } = req.body
 
         const updatedEntity = await Entity.findOneAndUpdate(
           { id: entityId },
-          { username,phoneNumber, email, registrationDate, age, location, userType },
+          {...req.body},
           { new: true }
         );
 
